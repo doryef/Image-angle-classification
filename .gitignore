@@ -1,0 +1,14 @@
+remote-x-forwarding-guide
+*.jpg
+venv/
+plots/
+logs/
+checkpoints/
+data/
+raw_data/
+research_papers/
+*.png
+*.jpeg
+*.pyc
+*.xml
+*.iml

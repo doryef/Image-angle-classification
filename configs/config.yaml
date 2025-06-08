@@ -1,0 +1,26 @@
+model:
+  pretrained: true
+  freeze_backbone: true
+
+training:
+  num_epochs: 50
+  batch_size: 32
+  num_workers: 4
+  log_interval: 10
+  backbone_lr: 0.0001
+  head_lr: 0.001
+  enable_monitoring: true  # Enable/disable TensorBoard monitoring
+
+data:
+  train_dir: "data/train"
+  val_dir: "data/val"
+  test_dir: "data/test"
+  img_size: 224
+
+augmentation:
+  resize: 256
+  crop_size: 224
+  zoom_range: 0.1
+  brightness: 0.2
+  contrast: 0.2
+  horizontal_flip: true
