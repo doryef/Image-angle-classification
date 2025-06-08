@@ -11,12 +11,14 @@ class ModelTrainer:
         model,
         train_loader,
         val_loader,
+        synthetic_loader,
         config,
         device='cuda' if torch.cuda.is_available() else 'cpu'
     ):
         self.model = model.to(device)
         self.train_loader = train_loader
         self.val_loader = val_loader
+        self.synthetic_loader = synthetic_loader
         self.device = device
         self.config = config
         
@@ -122,6 +124,31 @@ class ModelTrainer:
         val_loss /= len(self.val_loader)
         val_acc = 100. * correct / total
         
+        # do the same for synthetic data
+        synthetic_loss = 0
+        synthetic_correct = 0
+        synthetic_total = 0
+        synthetic_all_labels = []
+        synthetic_all_predicted = []
+
+        with torch.no_grad():
+            for images, labels in self.synthetic_loader:
+                images, labels = images.to(self.device), labels.to(self.device)
+                outputs = self.model(images)
+                synthetic_loss += self.criterion(outputs, labels).item()
+
+                _, predicted = torch.max(outputs, 1)
+                synthetic_total += labels.size(0)
+                synthetic_correct += (predicted == labels).sum().item()
+
+                synthetic_all_labels.extend(labels.cpu().numpy())
+                synthetic_all_predicted.extend(predicted.cpu().numpy())
+
+        synthetic_loss /= len(self.synthetic_loader)
+        synthetic_acc = 100. * synthetic_correct / synthetic_total
+        print(f'SYNTHETIC RESULTS - Epoch {epoch+1}')
+        print(f'-SYNTHETIC- Loss: {synthetic_loss:.4f}, Acc: {synthetic_acc:.2f}%')
+
         # Log validation metrics
         self.monitor.log_validation_step(
             model=self.model,
@@ -164,7 +191,7 @@ class ModelTrainer:
             val_loss, val_acc = self.validate(epoch)
             
             print(f'Training Loss: {train_loss:.4f}, Training Acc: {train_acc:.2f}%')
-            print(f'Validation Loss: {val_loss:.4f}, Validation Acc: {val_acc:.2f}%')
+            print(f'real data Validation Loss: {val_loss:.4f}, Validation Acc: {val_acc:.2f}%')
             
             # Update learning rate
             self.scheduler.step(val_loss)

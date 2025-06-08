@@ -19,8 +19,8 @@ def load_config(config_path):
 
 def create_transforms(config):
     train_transform_list = [
-        transforms.Resize(config['augmentation']['resize']),
         transforms.RandomCrop(config['augmentation']['crop_size']),
+        transforms.Resize(config['augmentation']['resize']),
     ]
     
     # Add horizontal flip if enabled
@@ -51,8 +51,8 @@ def create_transforms(config):
     train_transform = transforms.Compose(train_transform_list)
     
     val_transform = transforms.Compose([
-        transforms.Resize(config['augmentation']['resize']),
         transforms.CenterCrop(config['augmentation']['crop_size']),
+        transforms.Resize(config['augmentation']['resize']),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406],
                            std=[0.229, 0.224, 0.225])
@@ -80,6 +80,10 @@ def main():
         config['data']['val_dir'],
         transform=val_transform
     )
+    synthetic_dataset = ImageDataset(
+        config['data']['synthetic_dir'],
+        transform=train_transform
+    )
     
     # Create data loaders
     train_loader = DataLoader(
@@ -94,7 +98,12 @@ def main():
         shuffle=False,
         num_workers=config['training']['num_workers']
     )
-    
+    synthetic_loader = DataLoader(
+        synthetic_dataset,
+        batch_size=config['training']['batch_size'],
+        shuffle=True,
+        num_workers=config['training']['num_workers']
+    )
     # Initialize model
     model = AngleClassifier(
         pretrained=config['model']['pretrained'],
@@ -106,6 +115,7 @@ def main():
         model=model,
         train_loader=train_loader,
         val_loader=val_loader,
+        synthetic_loader=synthetic_loader,
         config=config['training'],
         device=device
     )

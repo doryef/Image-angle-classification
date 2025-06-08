@@ -1,0 +1,13 @@
+{
+  "total_labels": 3,
+  "labels": [
+    "horizontal",
+    "diagonal",
+    "vertical"
+  ],
+  "counts": {
+    "horizontal": 279,
+    "diagonal": 1484,
+    "vertical": 1004
+  }
+}

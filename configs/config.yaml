@@ -13,13 +13,14 @@ training:
 
 data:
   train_dir: "data/train"
-  val_dir: "data/val"
+  val_dir: "data/val/real"
+  synthetic_dir: "data/val/synthetic"
   test_dir: "data/test"
   img_size: 224
 
 augmentation:
-  resize: 256
-  crop_size: 224
+  crop_size: 1440
+  resize: 224
   zoom_range: 0.1
   brightness: 0.2
   contrast: 0.2
