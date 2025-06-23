@@ -61,7 +61,7 @@ class ModelTrainer:
         total = 0
         all_labels = []
         all_predicted = []
-        
+        print(f'Train loader length: {len(self.train_loader)}')
         for batch_idx, (images, labels) in enumerate(self.train_loader):
             images, labels = images.to(self.device), labels.to(self.device)
             

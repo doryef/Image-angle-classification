@@ -19,9 +19,11 @@ data:
   img_size: 224
 
 augmentation:
-  crop_size: 1440
+  crop_size: 960  # Reduced from 1080 to handle VisDrone images (1078 height)
   resize: 224
   zoom_range: 0.1
   brightness: 0.2
   contrast: 0.2
   horizontal_flip: true
+  # Force RGB conversion to handle RGBA images
+  force_rgb: true

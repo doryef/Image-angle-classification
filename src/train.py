@@ -18,22 +18,26 @@ def load_config(config_path):
         return yaml.safe_load(f)
 
 def create_transforms(config):
+    # Determine scale range based on zoom_range
+    scale_min = 0.8
+    scale_max = 1.0
+    if 'zoom_range' in config['augmentation']:
+        scale_min = max(0.6, 1.0 - config['augmentation']['zoom_range'])
+        scale_max = min(1.2, 1.0 + config['augmentation']['zoom_range'])
+    
     train_transform_list = [
-        transforms.RandomCrop(config['augmentation']['crop_size']),
+        # Use RandomResizedCrop to handle varying image sizes and zoom
+        transforms.RandomResizedCrop(
+            config['augmentation']['crop_size'],
+            scale=(scale_min, scale_max),
+            ratio=(0.75, 1.33)  # Maintain reasonable aspect ratios
+        ),
         transforms.Resize(config['augmentation']['resize']),
     ]
     
     # Add horizontal flip if enabled
     if config['augmentation'].get('horizontal_flip', False):
         train_transform_list.append(transforms.RandomHorizontalFlip())
-    
-    # Add zoom variation using resize + crop
-    if 'zoom_range' in config['augmentation']:
-        base_size = int(config['augmentation']['crop_size'] * (1 + config['augmentation']['zoom_range']))
-        train_transform_list.append(transforms.RandomResizedCrop(
-            config['augmentation']['crop_size'],
-            scale=(1.0 - config['augmentation']['zoom_range'], 1.0 + config['augmentation']['zoom_range'])
-        ))
     
     # Add color augmentations
     train_transform_list.append(transforms.ColorJitter(
@@ -46,12 +50,12 @@ def create_transforms(config):
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406],
                            std=[0.229, 0.224, 0.225])
-    ])
-    
+    ])    
     train_transform = transforms.Compose(train_transform_list)
     
     val_transform = transforms.Compose([
-        transforms.CenterCrop(config['augmentation']['crop_size']),
+        # Use Resize first to ensure consistent size, then CenterCrop
+        transforms.Resize((config['augmentation']['crop_size'], config['augmentation']['crop_size'])),
         transforms.Resize(config['augmentation']['resize']),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406],
