@@ -4,7 +4,6 @@ venv/
 plots/
 logs/
 checkpoints/
-data/
 raw_data/
 research_papers/
 *.png

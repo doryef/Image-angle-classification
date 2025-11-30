@@ -34,16 +34,27 @@ def create_transforms(config):
         ),
         transforms.Resize(config['augmentation']['resize']),
     ]
-    
-    # Add horizontal flip if enabled
+      # Add horizontal flip if enabled
     if config['augmentation'].get('horizontal_flip', False):
         train_transform_list.append(transforms.RandomHorizontalFlip())
     
-    # Add color augmentations
-    train_transform_list.append(transforms.ColorJitter(
-        brightness=config['augmentation']['brightness'],
-        contrast=config['augmentation']['contrast']
-    ))
+    # Add enhanced color augmentations
+    color_jitter_kwargs = {
+        'brightness': config['augmentation']['brightness'],
+        'contrast': config['augmentation']['contrast']
+    }
+    if 'saturation' in config['augmentation']:
+        color_jitter_kwargs['saturation'] = config['augmentation']['saturation']
+    if 'hue' in config['augmentation']:
+        color_jitter_kwargs['hue'] = config['augmentation']['hue']
+    
+    train_transform_list.append(transforms.ColorJitter(**color_jitter_kwargs))
+    
+    # Add gaussian blur occasionally
+    if config['augmentation'].get('gaussian_blur', 0) > 0:
+        train_transform_list.append(transforms.RandomApply([
+            transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 2.0))
+        ], p=config['augmentation']['gaussian_blur']))
     
     # Add final transforms
     train_transform_list.extend([
@@ -107,11 +118,11 @@ def main():
         batch_size=config['training']['batch_size'],
         shuffle=True,
         num_workers=config['training']['num_workers']
-    )
-    # Initialize model
+    )    # Initialize model
     model = AngleClassifier(
         pretrained=config['model']['pretrained'],
-        freeze_backbone=config['model']['freeze_backbone']
+        freeze_backbone=config['model']['freeze_backbone'],
+        dropout_rate=config['training'].get('dropout_rate', 0.5)
     )
     
     # Initialize trainer

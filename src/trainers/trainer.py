@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 from datetime import datetime
 import os
+import csv
 from src.utils.monitoring.training_monitor import TrainingMonitor
 
 class ModelTrainer:
@@ -37,6 +38,16 @@ class ModelTrainer:
             enable_monitoring=config.get('enable_monitoring', True)
         )
         self.best_val_loss = float('inf')
+        self.patience_counter = 0
+        
+        # Initialize training history
+        self.history = {
+            'epoch': [],
+            'train_loss': [],
+            'train_acc': [],
+            'val_loss': [],
+            'val_acc': []
+        }
 
     def _create_optimizer(self):
         backbone_params = []
@@ -49,9 +60,12 @@ class ModelTrainer:
                 else:
                     backbone_params.append(param)
         
+        # Add weight decay for regularization
+        weight_decay = self.config.get('weight_decay', 0.0)
+        
         return optim.Adam([
-            {'params': backbone_params, 'lr': self.config['backbone_lr']},
-            {'params': head_params, 'lr': self.config['head_lr']}
+            {'params': backbone_params, 'lr': self.config['backbone_lr'], 'weight_decay': weight_decay},
+            {'params': head_params, 'lr': self.config['head_lr'], 'weight_decay': weight_decay}
         ])
 
     def train_epoch(self, epoch):
@@ -185,6 +199,12 @@ class ModelTrainer:
         return False
 
     def train(self, num_epochs):
+        early_stopping_patience = self.config.get('early_stopping_patience', 0)
+        
+        # Create logs directory if it doesn't exist
+        os.makedirs('logs', exist_ok=True)
+        history_file = f'logs/training_history_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv'
+        
         for epoch in range(num_epochs):
             print(f'\nEpoch {epoch+1}/{num_epochs}')
             train_loss, train_acc = self.train_epoch(epoch)
@@ -193,12 +213,46 @@ class ModelTrainer:
             print(f'Training Loss: {train_loss:.4f}, Training Acc: {train_acc:.2f}%')
             print(f'real data Validation Loss: {val_loss:.4f}, Validation Acc: {val_acc:.2f}%')
             
+            # Save to history
+            self.history['epoch'].append(epoch + 1)
+            self.history['train_loss'].append(train_loss)
+            self.history['train_acc'].append(train_acc)
+            self.history['val_loss'].append(val_loss)
+            self.history['val_acc'].append(val_acc)
+            
             # Update learning rate
             self.scheduler.step(val_loss)
             
             # Save checkpoint if model improved
-            if self.save_checkpoint(epoch, val_loss, val_acc):
+            improved = self.save_checkpoint(epoch, val_loss, val_acc)
+            if improved:
                 print(f'Validation Loss Improved: {val_loss:.4f}\n')
+                self.patience_counter = 0
+            else:
+                self.patience_counter += 1
+                
+            # Early stopping check
+            if early_stopping_patience > 0 and self.patience_counter >= early_stopping_patience:
+                print(f'Early stopping triggered after {early_stopping_patience} epochs without improvement')
+                break
+        
+        # Save training history to CSV
+        self.save_history(history_file)
         
         # Clean up monitoring resources
         self.monitor.close()
+    
+    def save_history(self, filepath):
+        """Save training history to CSV file"""
+        with open(filepath, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['epoch', 'train_loss', 'train_acc', 'val_loss', 'val_acc'])
+            for i in range(len(self.history['epoch'])):
+                writer.writerow([
+                    self.history['epoch'][i],
+                    self.history['train_loss'][i],
+                    self.history['train_acc'][i],
+                    self.history['val_loss'][i],
+                    self.history['val_acc'][i]
+                ])
+        print(f'Training history saved to {filepath}')

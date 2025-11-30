@@ -2,7 +2,7 @@ import torch.nn as nn
 import torchvision.models as models
 
 class AngleClassifier(nn.Module):
-    def __init__(self, pretrained=True, freeze_backbone=True):
+    def __init__(self, pretrained=True, freeze_backbone=True, dropout_rate=0.5):
         super(AngleClassifier, self).__init__()
         # Load pre-trained ResNet50
         self.resnet = models.resnet50(weights='IMAGENET1K_V2' if pretrained else None)
@@ -12,12 +12,15 @@ class AngleClassifier(nn.Module):
             for param in self.resnet.parameters():
                 param.requires_grad = False
         
-        # Replace the final fully connected layer
+        # Replace the final fully connected layer with more regularization
         num_features = self.resnet.fc.in_features
         self.resnet.fc = nn.Sequential(
-            nn.Linear(num_features, 256),
+            nn.Linear(num_features, 512),
             nn.ReLU(),
-            nn.Dropout(0.5),
+            nn.Dropout(dropout_rate),
+            nn.Linear(512, 256),
+            nn.ReLU(),
+            nn.Dropout(dropout_rate),
             nn.Linear(256, 3)  # 3 classes: 0-30, 30-60, 60-90
         )
 

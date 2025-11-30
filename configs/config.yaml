@@ -3,27 +3,34 @@ model:
   freeze_backbone: true
 
 training:
-  num_epochs: 50
+  num_epochs: 20
   batch_size: 32
   num_workers: 4
   log_interval: 10
   backbone_lr: 0.0001
   head_lr: 0.001
   enable_monitoring: true  # Enable/disable TensorBoard monitoring
+  # Regularization parameters
+  weight_decay: 0.0001  # L2 regularization
+  dropout_rate: 0.6     # Increased from 0.5
+  early_stopping_patience: 3  # Stop if no improvement for 10 epochs
 
 data:
-  train_dir: "data/train"
-  val_dir: "data/val/real"
-  synthetic_dir: "data/val/synthetic"
-  test_dir: "data/test"
+  train_dir: "data/synthetic_only_light/train"
+  val_dir: "data/synthetic_only_light/val"
+  synthetic_dir: "data/synthetic_only_light/val"
+  test_dir: "data/synthetic_only_light/test"
   img_size: 224
 
 augmentation:
   crop_size: 960  # Reduced from 1080 to handle VisDrone images (1078 height)
   resize: 224
-  zoom_range: 0.1
-  brightness: 0.2
-  contrast: 0.2
+  zoom_range: 0.2       # Increased from 0.1
+  brightness: 0.3       # Increased from 0.2
+  contrast: 0.3         # Increased from 0.2
+  saturation: 0.2       # New augmentation
+  hue: 0.1              # New augmentation
   horizontal_flip: true
+  gaussian_blur: 0.1    # New: occasional gaussian blur
   # Force RGB conversion to handle RGBA images
   force_rgb: true

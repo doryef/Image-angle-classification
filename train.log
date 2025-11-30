@@ -1,81 +1,106 @@
 nohup: ignoring input
 Using device: cuda
 
-Epoch 1/50
-Train Epoch: 0 [0/21597 (0%)]	Loss: 1.123096
-Train Epoch: 0 [320/21597 (1%)]	Loss: 0.867019
-Train Epoch: 0 [640/21597 (3%)]	Loss: 0.710300
-Train Epoch: 0 [960/21597 (4%)]	Loss: 0.644333
-Train Epoch: 0 [1280/21597 (6%)]	Loss: 0.646029
-Train Epoch: 0 [1600/21597 (7%)]	Loss: 0.459190
-Train Epoch: 0 [1920/21597 (9%)]	Loss: 0.553875
-Train Epoch: 0 [2240/21597 (10%)]	Loss: 0.444363
-Train Epoch: 0 [2560/21597 (12%)]	Loss: 0.271622
-Train Epoch: 0 [2880/21597 (13%)]	Loss: 0.373237
-Train Epoch: 0 [3200/21597 (15%)]	Loss: 0.340777
-Train Epoch: 0 [3520/21597 (16%)]	Loss: 0.330173
-Train Epoch: 0 [3840/21597 (18%)]	Loss: 0.385164
-Train Epoch: 0 [4160/21597 (19%)]	Loss: 0.419725
-Train Epoch: 0 [4480/21597 (21%)]	Loss: 0.582092
-Train Epoch: 0 [4800/21597 (22%)]	Loss: 0.281639
-Train Epoch: 0 [5120/21597 (24%)]	Loss: 0.574304
-Train Epoch: 0 [5440/21597 (25%)]	Loss: 0.457200
-Train Epoch: 0 [5760/21597 (27%)]	Loss: 0.276237
-Train Epoch: 0 [6080/21597 (28%)]	Loss: 0.414492
-Train Epoch: 0 [6400/21597 (30%)]	Loss: 0.378357
-Train Epoch: 0 [6720/21597 (31%)]	Loss: 0.440007
-Train Epoch: 0 [7040/21597 (33%)]	Loss: 0.269329
-Train Epoch: 0 [7360/21597 (34%)]	Loss: 0.504208
-Train Epoch: 0 [7680/21597 (36%)]	Loss: 0.348848
-Train Epoch: 0 [8000/21597 (37%)]	Loss: 0.453659
-Train Epoch: 0 [8320/21597 (39%)]	Loss: 0.215799
-Train Epoch: 0 [8640/21597 (40%)]	Loss: 0.218095
-Train Epoch: 0 [8960/21597 (41%)]	Loss: 0.227929
-Train Epoch: 0 [9280/21597 (43%)]	Loss: 0.392781
-Train Epoch: 0 [9600/21597 (44%)]	Loss: 0.236510
-Train Epoch: 0 [9920/21597 (46%)]	Loss: 0.243886
-Train Epoch: 0 [10240/21597 (47%)]	Loss: 0.141497
-Train Epoch: 0 [10560/21597 (49%)]	Loss: 0.156369
-Train Epoch: 0 [10880/21597 (50%)]	Loss: 0.292980
-Train Epoch: 0 [11200/21597 (52%)]	Loss: 0.387210
-Train Epoch: 0 [11520/21597 (53%)]	Loss: 0.557377
-Train Epoch: 0 [11840/21597 (55%)]	Loss: 0.147663
-Train Epoch: 0 [12160/21597 (56%)]	Loss: 0.290789
-Train Epoch: 0 [12480/21597 (58%)]	Loss: 0.256479
-Train Epoch: 0 [12800/21597 (59%)]	Loss: 0.440771
-Train Epoch: 0 [13120/21597 (61%)]	Loss: 0.222143
-Train Epoch: 0 [13440/21597 (62%)]	Loss: 0.252023
-Train Epoch: 0 [13760/21597 (64%)]	Loss: 0.289299
-Train Epoch: 0 [14080/21597 (65%)]	Loss: 0.235584
-Train Epoch: 0 [14400/21597 (67%)]	Loss: 0.226963
-Train Epoch: 0 [14720/21597 (68%)]	Loss: 0.141469
-Train Epoch: 0 [15040/21597 (70%)]	Loss: 0.156736
-Train Epoch: 0 [15360/21597 (71%)]	Loss: 0.268628
-Train Epoch: 0 [15680/21597 (73%)]	Loss: 0.174357
-Train Epoch: 0 [16000/21597 (74%)]	Loss: 0.377072
-Train Epoch: 0 [16320/21597 (76%)]	Loss: 0.407964
-Train Epoch: 0 [16640/21597 (77%)]	Loss: 0.209726
-Train Epoch: 0 [16960/21597 (79%)]	Loss: 0.248408
-Train Epoch: 0 [17280/21597 (80%)]	Loss: 0.192232
-Train Epoch: 0 [17600/21597 (81%)]	Loss: 0.137675
-Train Epoch: 0 [17920/21597 (83%)]	Loss: 0.208895
-Train Epoch: 0 [18240/21597 (84%)]	Loss: 0.171295
-Train Epoch: 0 [18560/21597 (86%)]	Loss: 0.310373
-Train Epoch: 0 [18880/21597 (87%)]	Loss: 0.108160
-Train Epoch: 0 [19200/21597 (89%)]	Loss: 0.273867
-Train Epoch: 0 [19520/21597 (90%)]	Loss: 0.303509
-Train Epoch: 0 [19840/21597 (92%)]	Loss: 0.239693
-Train Epoch: 0 [20160/21597 (93%)]	Loss: 0.144970
-Train Epoch: 0 [20480/21597 (95%)]	Loss: 0.534143
-Train Epoch: 0 [20800/21597 (96%)]	Loss: 0.126608
-Train Epoch: 0 [21120/21597 (98%)]	Loss: 0.084343
-Train Epoch: 0 [21440/21597 (99%)]	Loss: 0.119318
+Epoch 1/20
+Train loader length: 13
+Train Epoch: 0 [0/387 (0%)]	Loss: 1.098536
+Train Epoch: 0 [320/387 (77%)]	Loss: 1.029742
 SYNTHETIC RESULTS - Epoch 1
--SYNTHETIC- Loss: 0.1965, Acc: 91.75%
-Training Loss: 0.3431, Training Acc: 86.04%
-real data Validation Loss: 3.7244, Validation Acc: 40.00%
-Model saved to checkpoints/angle_classifier_20250608_175335.pth
-Validation Loss Improved: 3.7244
+-SYNTHETIC- Loss: 0.9100, Acc: 67.89%
+Training Loss: 1.0350, Training Acc: 44.70%
+real data Validation Loss: 1.0051, Validation Acc: 54.33%
+Model saved to checkpoints/angle_classifier_20251123_153907.pth
+Validation Loss Improved: 1.0051
 
 
-Epoch 2/50
+Epoch 2/20
+Train loader length: 13
+Train Epoch: 1 [0/387 (0%)]	Loss: 0.884288
+Train Epoch: 1 [320/387 (77%)]	Loss: 0.731908
+SYNTHETIC RESULTS - Epoch 2
+-SYNTHETIC- Loss: 0.6887, Acc: 72.78%
+Training Loss: 0.7199, Training Acc: 68.99%
+real data Validation Loss: 1.0345, Validation Acc: 48.67%
+
+Epoch 3/20
+Train loader length: 13
+Train Epoch: 2 [0/387 (0%)]	Loss: 0.534014
+Train Epoch: 2 [320/387 (77%)]	Loss: 0.388148
+SYNTHETIC RESULTS - Epoch 3
+-SYNTHETIC- Loss: 0.7640, Acc: 66.55%
+Training Loss: 0.5455, Training Acc: 80.62%
+real data Validation Loss: 1.0684, Validation Acc: 50.67%
+
+Epoch 4/20
+Train loader length: 13
+Train Epoch: 3 [0/387 (0%)]	Loss: 0.260857
+Train Epoch: 3 [320/387 (77%)]	Loss: 0.166297
+SYNTHETIC RESULTS - Epoch 4
+-SYNTHETIC- Loss: 0.8119, Acc: 67.21%
+Training Loss: 0.4358, Training Acc: 84.24%
+real data Validation Loss: 1.2149, Validation Acc: 48.33%
+
+Epoch 5/20
+Train loader length: 13
+Train Epoch: 4 [0/387 (0%)]	Loss: 0.229552
+Train Epoch: 4 [320/387 (77%)]	Loss: 0.214744
+SYNTHETIC RESULTS - Epoch 5
+-SYNTHETIC- Loss: 0.9351, Acc: 66.37%
+Training Loss: 0.3014, Training Acc: 87.60%
+real data Validation Loss: 1.1473, Validation Acc: 49.67%
+
+Epoch 6/20
+Train loader length: 13
+Train Epoch: 5 [0/387 (0%)]	Loss: 0.376197
+Train Epoch: 5 [320/387 (77%)]	Loss: 0.308320
+SYNTHETIC RESULTS - Epoch 6
+-SYNTHETIC- Loss: 1.0348, Acc: 66.49%
+Training Loss: 0.2893, Training Acc: 87.60%
+real data Validation Loss: 1.2484, Validation Acc: 49.67%
+
+Epoch 7/20
+Train loader length: 13
+Train Epoch: 6 [0/387 (0%)]	Loss: 0.233848
+Train Epoch: 6 [320/387 (77%)]	Loss: 0.172209
+SYNTHETIC RESULTS - Epoch 7
+-SYNTHETIC- Loss: 1.0353, Acc: 66.99%
+Training Loss: 0.2854, Training Acc: 90.70%
+real data Validation Loss: 1.4697, Validation Acc: 49.33%
+
+Epoch 8/20
+Train loader length: 13
+Train Epoch: 7 [0/387 (0%)]	Loss: 0.120733
+Train Epoch: 7 [320/387 (77%)]	Loss: 0.309280
+SYNTHETIC RESULTS - Epoch 8
+-SYNTHETIC- Loss: 1.1220, Acc: 66.24%
+Training Loss: 0.2416, Training Acc: 91.21%
+real data Validation Loss: 1.3110, Validation Acc: 50.00%
+
+Epoch 9/20
+Train loader length: 13
+Train Epoch: 8 [0/387 (0%)]	Loss: 0.363903
+Train Epoch: 8 [320/387 (77%)]	Loss: 0.152034
+SYNTHETIC RESULTS - Epoch 9
+-SYNTHETIC- Loss: 1.0050, Acc: 66.86%
+Training Loss: 0.2061, Training Acc: 92.76%
+real data Validation Loss: 1.3974, Validation Acc: 49.67%
+
+Epoch 10/20
+Train loader length: 13
+Train Epoch: 9 [0/387 (0%)]	Loss: 0.157783
+Train Epoch: 9 [320/387 (77%)]	Loss: 0.253307
+SYNTHETIC RESULTS - Epoch 10
+-SYNTHETIC- Loss: 1.2306, Acc: 65.34%
+Training Loss: 0.1700, Training Acc: 94.57%
+real data Validation Loss: 1.4622, Validation Acc: 51.00%
+
+Epoch 11/20
+Train loader length: 13
+Train Epoch: 10 [0/387 (0%)]	Loss: 0.182360
+Train Epoch: 10 [320/387 (77%)]	Loss: 0.141980
+SYNTHETIC RESULTS - Epoch 11
+-SYNTHETIC- Loss: 1.2599, Acc: 65.77%
+Training Loss: 0.2015, Training Acc: 93.02%
+real data Validation Loss: 1.4706, Validation Acc: 51.33%
+Early stopping triggered after 10 epochs without improvement
+Training history saved to logs/training_history_20251123_153743.csv
