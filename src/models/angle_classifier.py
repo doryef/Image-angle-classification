@@ -27,11 +27,11 @@ class AngleClassifier(nn.Module):
     def forward(self, x):
         return self.resnet(x)
 
-    def unfreeze_layers(self, num_layers=0):
-        """Unfreeze the last n layers of the ResNet backbone"""
-        if num_layers == 0:
-            return
+    # def unfreeze_layers(self, num_layers=0):
+    #     """Unfreeze the last n layers of the ResNet backbone"""
+    #     if num_layers == 0:
+    #         return
         
-        layers_to_unfreeze = list(self.resnet.named_parameters())
-        for name, param in layers_to_unfreeze[-num_layers:]:
-            param.requires_grad = True
+    #     layers_to_unfreeze = list(self.resnet.named_parameters())
+    #     for name, param in layers_to_unfreeze[-num_layers:]:
+    #         param.requires_grad = True

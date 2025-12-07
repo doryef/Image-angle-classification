@@ -48,7 +48,9 @@ def evaluate(model, test_loader, device):
         for images, labels in test_loader:
             images, labels = images.to(device), labels.to(device)
             outputs = model(images)
-            _, predicted = torch.max(outputs, 1)
+            # Apply softmax to convert logits to probabilities
+            probabilities = torch.nn.functional.softmax(outputs, dim=1)
+            _, predicted = torch.max(probabilities, 1)
             
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
@@ -59,7 +61,7 @@ def evaluate(model, test_loader, device):
     accuracy = 100 * correct / total
     return accuracy, all_preds, all_labels
 
-def plot_confusion_matrix(y_true, y_pred, classes):
+def plot_confusion_matrix(y_true, y_pred, classes, output_dir):
     cm = confusion_matrix(y_true, y_pred)
     plt.figure(figsize=(10, 8))
     sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
@@ -68,28 +70,29 @@ def plot_confusion_matrix(y_true, y_pred, classes):
     plt.ylabel('True Label')
     plt.xlabel('Predicted Label')
     
-    # Create plots directory if it doesn't exist
-    if not os.path.exists('plots'):
-        os.makedirs('plots')
-    
-    # Add timestamp to filename
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    plt.savefig(f'plots/confusion_matrix_{timestamp}.png')
+    plt.savefig(f'{output_dir}/confusion_matrix.png')
     plt.close()
-    print(f"\nConfusion matrix saved to 'plots/confusion_matrix_{timestamp}.png'")
+    print(f"\nConfusion matrix saved to '{output_dir}/confusion_matrix.png'")
 
-def plot_misclassified_samples(test_dataset, all_preds, all_labels, classes, checkpoint_path, num_samples=10):
+def plot_misclassified_samples(test_dataset, all_preds, all_labels, classes, checkpoint_path, output_dir, num_samples=10):
     """Plot misclassified samples with their predictions and probability distributions"""
-    # Find misclassified indices
-    misclassified_indices = [i for i in range(len(all_preds)) 
-                            if all_preds[i] != all_labels[i]]
+    # Initialize predictor to get probability distributions
+    predictor = AnglePredictor(checkpoint_path)
+    
+    # Re-evaluate all samples with predictor to ensure consistency
+    print("\nRe-evaluating samples with predictor for accurate classification...")
+    misclassified_indices = []
+    for i in range(len(all_labels)):
+        img_path, _ = test_dataset.samples[i]
+        result = predictor.predict_image(img_path)
+        pred_class_idx = classes.index(result['class'])
+        true_class_idx = all_labels[i]
+        if pred_class_idx != true_class_idx:
+            misclassified_indices.append(i)
     
     if len(misclassified_indices) == 0:
         print("No misclassified samples found!")
         return
-    
-    # Initialize predictor to get probability distributions
-    predictor = AnglePredictor(checkpoint_path)
     
     # Limit to requested number
     num_to_plot = min(num_samples, len(misclassified_indices))
@@ -110,11 +113,11 @@ def plot_misclassified_samples(test_dataset, all_preds, all_labels, classes, che
         
         # Get predictions and labels
         true_label = classes[all_labels[sample_idx]]
-        pred_label = classes[all_preds[sample_idx]]
         
         # Get probability distribution using inference
         result = predictor.predict_image(img_path)
         probs = result['probabilities']
+        pred_label = result['class']  # Use predictor's prediction for consistency with probabilities
         
         # Create subplot for image (top half)
         row = idx // 5
@@ -124,8 +127,8 @@ def plot_misclassified_samples(test_dataset, all_preds, all_labels, classes, che
         ax_img.imshow(img)
         ax_img.axis('off')
         ax_img.set_title(
-            f'True: {true_label} | Pred: {pred_label}',
-            fontsize=9,
+            f'True: {true_label} | Pred: {pred_label}\n{os.path.basename(img_path)}',
+            fontsize=8,
             color='red',
             fontweight='bold',
             pad=2
@@ -153,12 +156,24 @@ def plot_misclassified_samples(test_dataset, all_preds, all_labels, classes, che
             ax_bar.text(prob + 2, bar.get_y() + bar.get_height()/2, 
                        f'{prob:.1f}%', va='center', fontsize=6)
     
-    # Add timestamp to filename
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    plt.savefig(f'plots/misclassified_samples_{timestamp}.png', dpi=150, bbox_inches='tight')
+    plt.savefig(f'{output_dir}/misclassified_samples.png', dpi=150, bbox_inches='tight')
     plt.close()
-    print(f"\nMisclassified samples visualization saved to 'plots/misclassified_samples_{timestamp}.png'")
+    print(f"\nMisclassified samples visualization saved to '{output_dir}/misclassified_samples.png'")
     print(f"Total misclassified: {len(misclassified_indices)} out of {len(all_preds)} samples")
+    
+    # Save image paths to text file
+    with open(f'{output_dir}/misclassified_samples_paths.txt', 'w') as f:
+        f.write("Misclassified Sample Image Paths\n")
+        f.write("=" * 80 + "\n\n")
+        for idx, sample_idx in enumerate(sample_indices):
+            img_path, _ = test_dataset.samples[sample_idx]
+            true_label = classes[all_labels[sample_idx]]
+            pred_label = classes[all_preds[sample_idx]]
+            f.write(f"Sample {idx+1}:\n")
+            f.write(f"  Path: {img_path}\n")
+            f.write(f"  True Label: {true_label}\n")
+            f.write(f"  Predicted: {pred_label}\n\n")
+    print(f"Misclassified sample paths saved to '{output_dir}/misclassified_samples_paths.txt'")
     
     # Print detailed probability info for misclassified samples
     print("\nDetailed Probability Distributions for Misclassified Samples:")
@@ -177,7 +192,109 @@ def plot_misclassified_samples(test_dataset, all_preds, all_labels, classes, che
             marker = "✓" if cls == true_label else "✗" if cls == pred_label else " "
             print(f"    {marker} {cls}: {prob:.2f}%")
 
-def plot_training_history(test_accuracy=None):
+def plot_well_classified_samples(test_dataset, all_preds, all_labels, classes, checkpoint_path, output_dir, num_samples=10):
+    """Plot well-classified samples with their predictions and probability distributions"""
+    # Initialize predictor to get probability distributions
+    predictor = AnglePredictor(checkpoint_path)
+    
+    # Re-evaluate all samples with predictor to ensure consistency
+    print("\nRe-evaluating samples with predictor for accurate classification...")
+    correct_indices = []
+    for i in range(len(all_labels)):
+        img_path, _ = test_dataset.samples[i]
+        result = predictor.predict_image(img_path)
+        pred_class_idx = classes.index(result['class'])
+        true_class_idx = all_labels[i]
+        if pred_class_idx == true_class_idx:
+            correct_indices.append(i)
+    
+    if len(correct_indices) == 0:
+        print("No correctly classified samples found!")
+        return
+    
+    # Limit to requested number
+    num_to_plot = min(num_samples, len(correct_indices))
+    sample_indices = np.random.choice(correct_indices, num_to_plot, replace=False)
+    
+    # Create figure with subplots for images and probability bars
+    fig = plt.figure(figsize=(24, 10))
+    gs = fig.add_gridspec(2, 5, hspace=0.4, wspace=0.3)
+    
+    fig.suptitle('Well-Classified Samples with Probability Distributions', fontsize=16, fontweight='bold')
+    
+    for idx, sample_idx in enumerate(sample_indices):
+        # Get the image path from dataset
+        img_path, _ = test_dataset.samples[sample_idx]
+        
+        # Load and display the original image (without transforms)
+        img = Image.open(img_path).convert('RGB')
+        
+        # Get predictions and labels
+        true_label = classes[all_labels[sample_idx]]
+        
+        # Get probability distribution using inference
+        result = predictor.predict_image(img_path)
+        probs = result['probabilities']
+        pred_label = result['class']  # Use predictor's prediction for consistency with probabilities
+        
+        # Create subplot for image (top half)
+        row = idx // 5
+        col = idx % 5
+        ax_img = fig.add_subplot(gs[row, col])
+        
+        ax_img.imshow(img)
+        ax_img.axis('off')
+        ax_img.set_title(
+            f'True: {true_label} | Pred: {pred_label}\n{os.path.basename(img_path)}',
+            fontsize=8,
+            color='green',
+            fontweight='bold',
+            pad=2
+        )
+        
+        # Add small bar chart below image showing probabilities
+        ax_bar = ax_img.inset_axes([0.1, -0.35, 0.8, 0.25])
+        
+        class_labels = list(probs.keys())
+        prob_values = list(probs.values())
+        colors = ['green' if cls == true_label else 'gray' for cls in class_labels]
+        
+        # Use numeric positions for y-axis
+        y_pos = np.arange(len(class_labels))
+        bars = ax_bar.barh(y_pos, prob_values, color=colors, alpha=0.7)
+        ax_bar.set_yticks(y_pos)
+        ax_bar.set_yticklabels(class_labels)
+        ax_bar.set_xlim(0, 100)
+        ax_bar.set_xlabel('Probability (%)', fontsize=7)
+        ax_bar.tick_params(labelsize=6)
+        
+        # Add percentage labels on bars
+        for bar, prob in zip(bars, prob_values):
+            ax_bar.text(prob + 2, bar.get_y() + bar.get_height()/2, 
+                       f'{prob:.1f}%', va='center', fontsize=6)
+    
+    plt.savefig(f'{output_dir}/well_classified_samples.png', dpi=150, bbox_inches='tight')
+    plt.close()
+    print(f"\nWell-classified samples visualization saved to '{output_dir}/well_classified_samples.png'")
+    print(f"Total correctly classified: {len(correct_indices)} out of {len(all_preds)} samples")
+    
+    # Save image paths to text file
+    with open(f'{output_dir}/well_classified_samples_paths.txt', 'w') as f:
+        f.write("Well-Classified Sample Image Paths\n")
+        f.write("=" * 80 + "\n\n")
+        for idx, sample_idx in enumerate(sample_indices):
+            img_path, _ = test_dataset.samples[sample_idx]
+            true_label = classes[all_labels[sample_idx]]
+            pred_label = classes[all_preds[sample_idx]]
+            result = predictor.predict_image(img_path)
+            f.write(f"Sample {idx+1}:\n")
+            f.write(f"  Path: {img_path}\n")
+            f.write(f"  True Label: {true_label}\n")
+            f.write(f"  Predicted: {pred_label}\n")
+            f.write(f"  Confidence: {result['confidence']:.2f}%\n\n")
+    print(f"Well-classified sample paths saved to '{output_dir}/well_classified_samples_paths.txt'")
+
+def plot_training_history(test_accuracy, output_dir):
     """Plot training and validation loss/accuracy over epochs"""
     # Find the most recent training history file
     history_files = glob.glob('logs/training_history_*.csv')
@@ -220,13 +337,10 @@ def plot_training_history(test_accuracy=None):
     ax2.grid(True, alpha=0.3)
     
     plt.tight_layout()
-    
-    # Add timestamp to filename
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    plt.savefig(f'plots/training_history_{timestamp}.png', dpi=150, bbox_inches='tight')
+    plt.savefig(f'{output_dir}/training_history.png', dpi=150, bbox_inches='tight')
     plt.close()
     
-    print(f"Training history plot saved to 'plots/training_history_{timestamp}.png'")
+    print(f"Training history plot saved to '{output_dir}/training_history.png'")
     print(f"\nTraining Summary:")
     print(f"  Final Training Loss: {df['train_loss'].iloc[-1]:.4f}")
     print(f"  Final Training Accuracy: {df['train_acc'].iloc[-1]:.2f}%")
@@ -242,6 +356,12 @@ def main():
     # Set device
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Using device: {device}")
+    
+    # Create timestamped output directory for this evaluation run
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    output_dir = f'plots/evaluation_{timestamp}'
+    os.makedirs(output_dir, exist_ok=True)
+    print(f"Evaluation results will be saved to: {output_dir}\n")
     
     # Create test dataset and loader
     test_transform = create_test_transform(config)
@@ -284,14 +404,18 @@ def main():
     print(classification_report(all_labels, all_preds, target_names=class_names))
     
     # Plot confusion matrix
-    plot_confusion_matrix(all_labels, all_preds, class_names)
+    plot_confusion_matrix(all_labels, all_preds, class_names, output_dir)
     
     # Plot misclassified samples with probability distributions
     plot_misclassified_samples(test_dataset, all_preds, all_labels, class_names, 
-                               latest_checkpoint, num_samples=10)
+                               latest_checkpoint, output_dir, num_samples=10)
+    
+    # Plot well-classified samples with probability distributions
+    plot_well_classified_samples(test_dataset, all_preds, all_labels, class_names,
+                                latest_checkpoint, output_dir, num_samples=10)
     
     # Plot training history with test accuracy
-    plot_training_history(test_accuracy=test_accuracy)
+    plot_training_history(test_accuracy, output_dir)
 
 if __name__ == "__main__":
     main()

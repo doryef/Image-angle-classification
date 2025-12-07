@@ -1,106 +1,710 @@
 nohup: ignoring input
 Using device: cuda
 
-Epoch 1/20
-Train loader length: 13
-Train Epoch: 0 [0/387 (0%)]	Loss: 1.098536
-Train Epoch: 0 [320/387 (77%)]	Loss: 1.029742
+Epoch 1/35
+Train loader length: 118
+Train Epoch: 0 [0/3764 (0%)]	Loss: 1.072453
+Train Epoch: 0 [320/3764 (8%)]	Loss: 0.888202
+Train Epoch: 0 [640/3764 (17%)]	Loss: 0.825414
+Train Epoch: 0 [960/3764 (25%)]	Loss: 0.433025
+Train Epoch: 0 [1280/3764 (34%)]	Loss: 0.470343
+Train Epoch: 0 [1600/3764 (42%)]	Loss: 0.706847
+Train Epoch: 0 [1920/3764 (51%)]	Loss: 0.426767
+Train Epoch: 0 [2240/3764 (59%)]	Loss: 0.380385
+Train Epoch: 0 [2560/3764 (68%)]	Loss: 0.313918
+Train Epoch: 0 [2880/3764 (76%)]	Loss: 0.436263
+Train Epoch: 0 [3200/3764 (85%)]	Loss: 0.507262
+Train Epoch: 0 [3520/3764 (93%)]	Loss: 0.344513
 SYNTHETIC RESULTS - Epoch 1
--SYNTHETIC- Loss: 0.9100, Acc: 67.89%
-Training Loss: 1.0350, Training Acc: 44.70%
-real data Validation Loss: 1.0051, Validation Acc: 54.33%
-Model saved to checkpoints/angle_classifier_20251123_153907.pth
-Validation Loss Improved: 1.0051
+-SYNTHETIC- Loss: 0.8742, Acc: 60.00%
+Training Loss: 0.5400, Training Acc: 75.64%
+real data Validation Loss: 0.4800, Validation Acc: 77.33%
+Model saved to checkpoints/angle_classifier_20251130_165954.pth
+Validation Loss Improved: 0.4800
 
 
-Epoch 2/20
-Train loader length: 13
-Train Epoch: 1 [0/387 (0%)]	Loss: 0.884288
-Train Epoch: 1 [320/387 (77%)]	Loss: 0.731908
+Epoch 2/35
+Train loader length: 118
+Train Epoch: 1 [0/3764 (0%)]	Loss: 0.545281
+Train Epoch: 1 [320/3764 (8%)]	Loss: 0.762218
+Train Epoch: 1 [640/3764 (17%)]	Loss: 0.340041
+Train Epoch: 1 [960/3764 (25%)]	Loss: 0.490795
+Train Epoch: 1 [1280/3764 (34%)]	Loss: 0.466783
+Train Epoch: 1 [1600/3764 (42%)]	Loss: 0.514297
+Train Epoch: 1 [1920/3764 (51%)]	Loss: 0.313739
+Train Epoch: 1 [2240/3764 (59%)]	Loss: 0.572174
+Train Epoch: 1 [2560/3764 (68%)]	Loss: 0.268317
+Train Epoch: 1 [2880/3764 (76%)]	Loss: 0.263028
+Train Epoch: 1 [3200/3764 (85%)]	Loss: 0.492738
+Train Epoch: 1 [3520/3764 (93%)]	Loss: 0.335424
 SYNTHETIC RESULTS - Epoch 2
--SYNTHETIC- Loss: 0.6887, Acc: 72.78%
-Training Loss: 0.7199, Training Acc: 68.99%
-real data Validation Loss: 1.0345, Validation Acc: 48.67%
+-SYNTHETIC- Loss: 0.6118, Acc: 78.33%
+Training Loss: 0.3926, Training Acc: 82.94%
+real data Validation Loss: 0.6115, Validation Acc: 75.33%
 
-Epoch 3/20
-Train loader length: 13
-Train Epoch: 2 [0/387 (0%)]	Loss: 0.534014
-Train Epoch: 2 [320/387 (77%)]	Loss: 0.388148
+Epoch 3/35
+Train loader length: 118
+Train Epoch: 2 [0/3764 (0%)]	Loss: 0.377092
+Train Epoch: 2 [320/3764 (8%)]	Loss: 0.495300
+Train Epoch: 2 [640/3764 (17%)]	Loss: 0.358734
+Train Epoch: 2 [960/3764 (25%)]	Loss: 0.358732
+Train Epoch: 2 [1280/3764 (34%)]	Loss: 0.321223
+Train Epoch: 2 [1600/3764 (42%)]	Loss: 0.505320
+Train Epoch: 2 [1920/3764 (51%)]	Loss: 0.249115
+Train Epoch: 2 [2240/3764 (59%)]	Loss: 0.231155
+Train Epoch: 2 [2560/3764 (68%)]	Loss: 0.174159
+Train Epoch: 2 [2880/3764 (76%)]	Loss: 0.291963
+Train Epoch: 2 [3200/3764 (85%)]	Loss: 0.351410
+Train Epoch: 2 [3520/3764 (93%)]	Loss: 0.391366
 SYNTHETIC RESULTS - Epoch 3
--SYNTHETIC- Loss: 0.7640, Acc: 66.55%
-Training Loss: 0.5455, Training Acc: 80.62%
-real data Validation Loss: 1.0684, Validation Acc: 50.67%
+-SYNTHETIC- Loss: 0.5349, Acc: 76.67%
+Training Loss: 0.3386, Training Acc: 85.33%
+real data Validation Loss: 0.6358, Validation Acc: 76.00%
 
-Epoch 4/20
-Train loader length: 13
-Train Epoch: 3 [0/387 (0%)]	Loss: 0.260857
-Train Epoch: 3 [320/387 (77%)]	Loss: 0.166297
+Epoch 4/35
+Train loader length: 118
+Train Epoch: 3 [0/3764 (0%)]	Loss: 0.540764
+Train Epoch: 3 [320/3764 (8%)]	Loss: 0.303437
+Train Epoch: 3 [640/3764 (17%)]	Loss: 0.300631
+Train Epoch: 3 [960/3764 (25%)]	Loss: 0.258415
+Train Epoch: 3 [1280/3764 (34%)]	Loss: 0.341127
+Train Epoch: 3 [1600/3764 (42%)]	Loss: 0.344454
+Train Epoch: 3 [1920/3764 (51%)]	Loss: 0.225904
+Train Epoch: 3 [2240/3764 (59%)]	Loss: 0.164966
+Train Epoch: 3 [2560/3764 (68%)]	Loss: 0.338374
+Train Epoch: 3 [2880/3764 (76%)]	Loss: 0.373615
+Train Epoch: 3 [3200/3764 (85%)]	Loss: 0.320876
+Train Epoch: 3 [3520/3764 (93%)]	Loss: 0.176413
 SYNTHETIC RESULTS - Epoch 4
--SYNTHETIC- Loss: 0.8119, Acc: 67.21%
-Training Loss: 0.4358, Training Acc: 84.24%
-real data Validation Loss: 1.2149, Validation Acc: 48.33%
+-SYNTHETIC- Loss: 0.8335, Acc: 66.67%
+Training Loss: 0.3208, Training Acc: 86.56%
+real data Validation Loss: 0.6103, Validation Acc: 76.67%
 
-Epoch 5/20
-Train loader length: 13
-Train Epoch: 4 [0/387 (0%)]	Loss: 0.229552
-Train Epoch: 4 [320/387 (77%)]	Loss: 0.214744
+Epoch 5/35
+Train loader length: 118
+Train Epoch: 4 [0/3764 (0%)]	Loss: 0.247687
+Train Epoch: 4 [320/3764 (8%)]	Loss: 0.188272
+Train Epoch: 4 [640/3764 (17%)]	Loss: 0.356669
+Train Epoch: 4 [960/3764 (25%)]	Loss: 0.287591
+Train Epoch: 4 [1280/3764 (34%)]	Loss: 0.223656
+Train Epoch: 4 [1600/3764 (42%)]	Loss: 0.314230
+Train Epoch: 4 [1920/3764 (51%)]	Loss: 0.399734
+Train Epoch: 4 [2240/3764 (59%)]	Loss: 0.349083
+Train Epoch: 4 [2560/3764 (68%)]	Loss: 0.261882
+Train Epoch: 4 [2880/3764 (76%)]	Loss: 0.099992
+Train Epoch: 4 [3200/3764 (85%)]	Loss: 0.126981
+Train Epoch: 4 [3520/3764 (93%)]	Loss: 0.183281
 SYNTHETIC RESULTS - Epoch 5
--SYNTHETIC- Loss: 0.9351, Acc: 66.37%
-Training Loss: 0.3014, Training Acc: 87.60%
-real data Validation Loss: 1.1473, Validation Acc: 49.67%
+-SYNTHETIC- Loss: 0.5139, Acc: 75.00%
+Training Loss: 0.2863, Training Acc: 87.91%
+real data Validation Loss: 0.4994, Validation Acc: 80.67%
 
-Epoch 6/20
-Train loader length: 13
-Train Epoch: 5 [0/387 (0%)]	Loss: 0.376197
-Train Epoch: 5 [320/387 (77%)]	Loss: 0.308320
+Epoch 6/35
+Train loader length: 118
+Train Epoch: 5 [0/3764 (0%)]	Loss: 0.325583
+Train Epoch: 5 [320/3764 (8%)]	Loss: 0.236419
+Train Epoch: 5 [640/3764 (17%)]	Loss: 0.182931
+Train Epoch: 5 [960/3764 (25%)]	Loss: 0.270234
+Train Epoch: 5 [1280/3764 (34%)]	Loss: 0.308549
+Train Epoch: 5 [1600/3764 (42%)]	Loss: 0.394470
+Train Epoch: 5 [1920/3764 (51%)]	Loss: 0.181498
+Train Epoch: 5 [2240/3764 (59%)]	Loss: 0.191207
+Train Epoch: 5 [2560/3764 (68%)]	Loss: 0.217639
+Train Epoch: 5 [2880/3764 (76%)]	Loss: 0.344330
+Train Epoch: 5 [3200/3764 (85%)]	Loss: 0.200077
+Train Epoch: 5 [3520/3764 (93%)]	Loss: 0.189357
 SYNTHETIC RESULTS - Epoch 6
--SYNTHETIC- Loss: 1.0348, Acc: 66.49%
-Training Loss: 0.2893, Training Acc: 87.60%
-real data Validation Loss: 1.2484, Validation Acc: 49.67%
+-SYNTHETIC- Loss: 0.9224, Acc: 63.33%
+Training Loss: 0.2872, Training Acc: 88.02%
+real data Validation Loss: 0.4607, Validation Acc: 81.67%
+Model saved to checkpoints/angle_classifier_20251130_170330.pth
+Validation Loss Improved: 0.4607
 
-Epoch 7/20
-Train loader length: 13
-Train Epoch: 6 [0/387 (0%)]	Loss: 0.233848
-Train Epoch: 6 [320/387 (77%)]	Loss: 0.172209
+
+Epoch 7/35
+Train loader length: 118
+Train Epoch: 6 [0/3764 (0%)]	Loss: 0.221235
+Train Epoch: 6 [320/3764 (8%)]	Loss: 0.177986
+Train Epoch: 6 [640/3764 (17%)]	Loss: 0.134389
+Train Epoch: 6 [960/3764 (25%)]	Loss: 0.252515
+Train Epoch: 6 [1280/3764 (34%)]	Loss: 0.307118
+Train Epoch: 6 [1600/3764 (42%)]	Loss: 0.308619
+Train Epoch: 6 [1920/3764 (51%)]	Loss: 0.225485
+Train Epoch: 6 [2240/3764 (59%)]	Loss: 0.233294
+Train Epoch: 6 [2560/3764 (68%)]	Loss: 0.288339
+Train Epoch: 6 [2880/3764 (76%)]	Loss: 0.283296
+Train Epoch: 6 [3200/3764 (85%)]	Loss: 0.139627
+Train Epoch: 6 [3520/3764 (93%)]	Loss: 0.256635
 SYNTHETIC RESULTS - Epoch 7
--SYNTHETIC- Loss: 1.0353, Acc: 66.99%
-Training Loss: 0.2854, Training Acc: 90.70%
-real data Validation Loss: 1.4697, Validation Acc: 49.33%
+-SYNTHETIC- Loss: 0.6087, Acc: 70.00%
+Training Loss: 0.2786, Training Acc: 88.68%
+real data Validation Loss: 0.4349, Validation Acc: 84.00%
+Model saved to checkpoints/angle_classifier_20251130_170413.pth
+Validation Loss Improved: 0.4349
 
-Epoch 8/20
-Train loader length: 13
-Train Epoch: 7 [0/387 (0%)]	Loss: 0.120733
-Train Epoch: 7 [320/387 (77%)]	Loss: 0.309280
+
+Epoch 8/35
+Train loader length: 118
+Train Epoch: 7 [0/3764 (0%)]	Loss: 0.161092
+Train Epoch: 7 [320/3764 (8%)]	Loss: 0.180724
+Train Epoch: 7 [640/3764 (17%)]	Loss: 0.363918
+Train Epoch: 7 [960/3764 (25%)]	Loss: 0.094416
+Train Epoch: 7 [1280/3764 (34%)]	Loss: 0.277648
+Train Epoch: 7 [1600/3764 (42%)]	Loss: 0.220428
+Train Epoch: 7 [1920/3764 (51%)]	Loss: 0.196348
+Train Epoch: 7 [2240/3764 (59%)]	Loss: 0.402420
+Train Epoch: 7 [2560/3764 (68%)]	Loss: 0.235232
+Train Epoch: 7 [2880/3764 (76%)]	Loss: 0.441881
+Train Epoch: 7 [3200/3764 (85%)]	Loss: 0.197529
+Train Epoch: 7 [3520/3764 (93%)]	Loss: 0.153236
 SYNTHETIC RESULTS - Epoch 8
--SYNTHETIC- Loss: 1.1220, Acc: 66.24%
-Training Loss: 0.2416, Training Acc: 91.21%
-real data Validation Loss: 1.3110, Validation Acc: 50.00%
+-SYNTHETIC- Loss: 0.6995, Acc: 65.00%
+Training Loss: 0.2585, Training Acc: 89.64%
+real data Validation Loss: 0.4133, Validation Acc: 84.67%
+Model saved to checkpoints/angle_classifier_20251130_170455.pth
+Validation Loss Improved: 0.4133
 
-Epoch 9/20
-Train loader length: 13
-Train Epoch: 8 [0/387 (0%)]	Loss: 0.363903
-Train Epoch: 8 [320/387 (77%)]	Loss: 0.152034
+
+Epoch 9/35
+Train loader length: 118
+Train Epoch: 8 [0/3764 (0%)]	Loss: 0.132733
+Train Epoch: 8 [320/3764 (8%)]	Loss: 0.171374
+Train Epoch: 8 [640/3764 (17%)]	Loss: 0.272463
+Train Epoch: 8 [960/3764 (25%)]	Loss: 0.136368
+Train Epoch: 8 [1280/3764 (34%)]	Loss: 0.233556
+Train Epoch: 8 [1600/3764 (42%)]	Loss: 0.268131
+Train Epoch: 8 [1920/3764 (51%)]	Loss: 0.195568
+Train Epoch: 8 [2240/3764 (59%)]	Loss: 0.279331
+Train Epoch: 8 [2560/3764 (68%)]	Loss: 0.260939
+Train Epoch: 8 [2880/3764 (76%)]	Loss: 0.142555
+Train Epoch: 8 [3200/3764 (85%)]	Loss: 0.228209
+Train Epoch: 8 [3520/3764 (93%)]	Loss: 0.177272
 SYNTHETIC RESULTS - Epoch 9
--SYNTHETIC- Loss: 1.0050, Acc: 66.86%
-Training Loss: 0.2061, Training Acc: 92.76%
-real data Validation Loss: 1.3974, Validation Acc: 49.67%
+-SYNTHETIC- Loss: 0.6353, Acc: 70.00%
+Training Loss: 0.2508, Training Acc: 90.22%
+real data Validation Loss: 0.4378, Validation Acc: 83.33%
 
-Epoch 10/20
-Train loader length: 13
-Train Epoch: 9 [0/387 (0%)]	Loss: 0.157783
-Train Epoch: 9 [320/387 (77%)]	Loss: 0.253307
+Epoch 10/35
+Train loader length: 118
+Train Epoch: 9 [0/3764 (0%)]	Loss: 0.219773
+Train Epoch: 9 [320/3764 (8%)]	Loss: 0.281664
+Train Epoch: 9 [640/3764 (17%)]	Loss: 0.363689
+Train Epoch: 9 [960/3764 (25%)]	Loss: 0.194868
+Train Epoch: 9 [1280/3764 (34%)]	Loss: 0.166225
+Train Epoch: 9 [1600/3764 (42%)]	Loss: 0.164302
+Train Epoch: 9 [1920/3764 (51%)]	Loss: 0.268119
+Train Epoch: 9 [2240/3764 (59%)]	Loss: 0.286068
+Train Epoch: 9 [2560/3764 (68%)]	Loss: 0.307787
+Train Epoch: 9 [2880/3764 (76%)]	Loss: 0.227006
+Train Epoch: 9 [3200/3764 (85%)]	Loss: 0.218547
+Train Epoch: 9 [3520/3764 (93%)]	Loss: 0.205653
 SYNTHETIC RESULTS - Epoch 10
--SYNTHETIC- Loss: 1.2306, Acc: 65.34%
-Training Loss: 0.1700, Training Acc: 94.57%
-real data Validation Loss: 1.4622, Validation Acc: 51.00%
+-SYNTHETIC- Loss: 0.5995, Acc: 73.33%
+Training Loss: 0.2440, Training Acc: 89.51%
+real data Validation Loss: 0.3760, Validation Acc: 86.33%
+Model saved to checkpoints/angle_classifier_20251130_170620.pth
+Validation Loss Improved: 0.3760
 
-Epoch 11/20
-Train loader length: 13
-Train Epoch: 10 [0/387 (0%)]	Loss: 0.182360
-Train Epoch: 10 [320/387 (77%)]	Loss: 0.141980
+
+Epoch 11/35
+Train loader length: 118
+Train Epoch: 10 [0/3764 (0%)]	Loss: 0.169616
+Train Epoch: 10 [320/3764 (8%)]	Loss: 0.170120
+Train Epoch: 10 [640/3764 (17%)]	Loss: 0.142213
+Train Epoch: 10 [960/3764 (25%)]	Loss: 0.094970
+Train Epoch: 10 [1280/3764 (34%)]	Loss: 0.115150
+Train Epoch: 10 [1600/3764 (42%)]	Loss: 0.287206
+Train Epoch: 10 [1920/3764 (51%)]	Loss: 0.386956
+Train Epoch: 10 [2240/3764 (59%)]	Loss: 0.209730
+Train Epoch: 10 [2560/3764 (68%)]	Loss: 0.134787
+Train Epoch: 10 [2880/3764 (76%)]	Loss: 0.289529
+Train Epoch: 10 [3200/3764 (85%)]	Loss: 0.227194
+Train Epoch: 10 [3520/3764 (93%)]	Loss: 0.348263
 SYNTHETIC RESULTS - Epoch 11
--SYNTHETIC- Loss: 1.2599, Acc: 65.77%
-Training Loss: 0.2015, Training Acc: 93.02%
-real data Validation Loss: 1.4706, Validation Acc: 51.33%
-Early stopping triggered after 10 epochs without improvement
-Training history saved to logs/training_history_20251123_153743.csv
+-SYNTHETIC- Loss: 0.6928, Acc: 71.67%
+Training Loss: 0.2382, Training Acc: 90.09%
+real data Validation Loss: 0.3524, Validation Acc: 86.67%
+Model saved to checkpoints/angle_classifier_20251130_170702.pth
+Validation Loss Improved: 0.3524
+
+
+Epoch 12/35
+Train loader length: 118
+Train Epoch: 11 [0/3764 (0%)]	Loss: 0.122902
+Train Epoch: 11 [320/3764 (8%)]	Loss: 0.175384
+Train Epoch: 11 [640/3764 (17%)]	Loss: 0.279712
+Train Epoch: 11 [960/3764 (25%)]	Loss: 0.304913
+Train Epoch: 11 [1280/3764 (34%)]	Loss: 0.385548
+Train Epoch: 11 [1600/3764 (42%)]	Loss: 0.111214
+Train Epoch: 11 [1920/3764 (51%)]	Loss: 0.266662
+Train Epoch: 11 [2240/3764 (59%)]	Loss: 0.246842
+Train Epoch: 11 [2560/3764 (68%)]	Loss: 0.223519
+Train Epoch: 11 [2880/3764 (76%)]	Loss: 0.174610
+Train Epoch: 11 [3200/3764 (85%)]	Loss: 0.253662
+Train Epoch: 11 [3520/3764 (93%)]	Loss: 0.198804
+SYNTHETIC RESULTS - Epoch 12
+-SYNTHETIC- Loss: 0.6827, Acc: 71.67%
+Training Loss: 0.2364, Training Acc: 90.09%
+real data Validation Loss: 0.3460, Validation Acc: 86.33%
+Model saved to checkpoints/angle_classifier_20251130_170746.pth
+Validation Loss Improved: 0.3460
+
+
+Epoch 13/35
+Train loader length: 118
+Train Epoch: 12 [0/3764 (0%)]	Loss: 0.138092
+Train Epoch: 12 [320/3764 (8%)]	Loss: 0.118676
+Train Epoch: 12 [640/3764 (17%)]	Loss: 0.246623
+Train Epoch: 12 [960/3764 (25%)]	Loss: 0.171920
+Train Epoch: 12 [1280/3764 (34%)]	Loss: 0.157454
+Train Epoch: 12 [1600/3764 (42%)]	Loss: 0.130591
+Train Epoch: 12 [1920/3764 (51%)]	Loss: 0.498260
+Train Epoch: 12 [2240/3764 (59%)]	Loss: 0.167046
+Train Epoch: 12 [2560/3764 (68%)]	Loss: 0.223374
+Train Epoch: 12 [2880/3764 (76%)]	Loss: 0.196379
+Train Epoch: 12 [3200/3764 (85%)]	Loss: 0.135574
+Train Epoch: 12 [3520/3764 (93%)]	Loss: 0.361846
+SYNTHETIC RESULTS - Epoch 13
+-SYNTHETIC- Loss: 0.4941, Acc: 78.33%
+Training Loss: 0.2193, Training Acc: 90.86%
+real data Validation Loss: 0.3350, Validation Acc: 88.00%
+Model saved to checkpoints/angle_classifier_20251130_170828.pth
+Validation Loss Improved: 0.3350
+
+
+Epoch 14/35
+Train loader length: 118
+Train Epoch: 13 [0/3764 (0%)]	Loss: 0.261352
+Train Epoch: 13 [320/3764 (8%)]	Loss: 0.315605
+Train Epoch: 13 [640/3764 (17%)]	Loss: 0.271553
+Train Epoch: 13 [960/3764 (25%)]	Loss: 0.261867
+Train Epoch: 13 [1280/3764 (34%)]	Loss: 0.364947
+Train Epoch: 13 [1600/3764 (42%)]	Loss: 0.118688
+Train Epoch: 13 [1920/3764 (51%)]	Loss: 0.196117
+Train Epoch: 13 [2240/3764 (59%)]	Loss: 0.173484
+Train Epoch: 13 [2560/3764 (68%)]	Loss: 0.243819
+Train Epoch: 13 [2880/3764 (76%)]	Loss: 0.132325
+Train Epoch: 13 [3200/3764 (85%)]	Loss: 0.193043
+Train Epoch: 13 [3520/3764 (93%)]	Loss: 0.180742
+SYNTHETIC RESULTS - Epoch 14
+-SYNTHETIC- Loss: 0.5232, Acc: 75.00%
+Training Loss: 0.2385, Training Acc: 90.28%
+real data Validation Loss: 0.3958, Validation Acc: 85.00%
+
+Epoch 15/35
+Train loader length: 118
+Train Epoch: 14 [0/3764 (0%)]	Loss: 0.131912
+Train Epoch: 14 [320/3764 (8%)]	Loss: 0.200560
+Train Epoch: 14 [640/3764 (17%)]	Loss: 0.164144
+Train Epoch: 14 [960/3764 (25%)]	Loss: 0.163163
+Train Epoch: 14 [1280/3764 (34%)]	Loss: 0.189164
+Train Epoch: 14 [1600/3764 (42%)]	Loss: 0.155303
+Train Epoch: 14 [1920/3764 (51%)]	Loss: 0.226981
+Train Epoch: 14 [2240/3764 (59%)]	Loss: 0.160488
+Train Epoch: 14 [2560/3764 (68%)]	Loss: 0.192000
+Train Epoch: 14 [2880/3764 (76%)]	Loss: 0.206026
+Train Epoch: 14 [3200/3764 (85%)]	Loss: 0.422832
+Train Epoch: 14 [3520/3764 (93%)]	Loss: 0.445677
+SYNTHETIC RESULTS - Epoch 15
+-SYNTHETIC- Loss: 0.7703, Acc: 76.67%
+Training Loss: 0.2161, Training Acc: 90.75%
+real data Validation Loss: 0.3779, Validation Acc: 85.00%
+
+Epoch 16/35
+Train loader length: 118
+Train Epoch: 15 [0/3764 (0%)]	Loss: 0.260040
+Train Epoch: 15 [320/3764 (8%)]	Loss: 0.182726
+Train Epoch: 15 [640/3764 (17%)]	Loss: 0.206669
+Train Epoch: 15 [960/3764 (25%)]	Loss: 0.243582
+Train Epoch: 15 [1280/3764 (34%)]	Loss: 0.112827
+Train Epoch: 15 [1600/3764 (42%)]	Loss: 0.129202
+Train Epoch: 15 [1920/3764 (51%)]	Loss: 0.093155
+Train Epoch: 15 [2240/3764 (59%)]	Loss: 0.103207
+Train Epoch: 15 [2560/3764 (68%)]	Loss: 0.285849
+Train Epoch: 15 [2880/3764 (76%)]	Loss: 0.206045
+Train Epoch: 15 [3200/3764 (85%)]	Loss: 0.258134
+Train Epoch: 15 [3520/3764 (93%)]	Loss: 0.270950
+SYNTHETIC RESULTS - Epoch 16
+-SYNTHETIC- Loss: 0.4912, Acc: 78.33%
+Training Loss: 0.2217, Training Acc: 91.37%
+real data Validation Loss: 0.3166, Validation Acc: 88.33%
+Model saved to checkpoints/angle_classifier_20251130_171037.pth
+Validation Loss Improved: 0.3166
+
+
+Epoch 17/35
+Train loader length: 118
+Train Epoch: 16 [0/3764 (0%)]	Loss: 0.260731
+Train Epoch: 16 [320/3764 (8%)]	Loss: 0.476566
+Train Epoch: 16 [640/3764 (17%)]	Loss: 0.097145
+Train Epoch: 16 [960/3764 (25%)]	Loss: 0.203718
+Train Epoch: 16 [1280/3764 (34%)]	Loss: 0.179486
+Train Epoch: 16 [1600/3764 (42%)]	Loss: 0.115514
+Train Epoch: 16 [1920/3764 (51%)]	Loss: 0.104018
+Train Epoch: 16 [2240/3764 (59%)]	Loss: 0.263077
+Train Epoch: 16 [2560/3764 (68%)]	Loss: 0.190113
+Train Epoch: 16 [2880/3764 (76%)]	Loss: 0.146218
+Train Epoch: 16 [3200/3764 (85%)]	Loss: 0.214300
+Train Epoch: 16 [3520/3764 (93%)]	Loss: 0.292573
+SYNTHETIC RESULTS - Epoch 17
+-SYNTHETIC- Loss: 0.5563, Acc: 73.33%
+Training Loss: 0.2137, Training Acc: 91.60%
+real data Validation Loss: 0.3596, Validation Acc: 85.67%
+
+Epoch 18/35
+Train loader length: 118
+Train Epoch: 17 [0/3764 (0%)]	Loss: 0.123156
+Train Epoch: 17 [320/3764 (8%)]	Loss: 0.109994
+Train Epoch: 17 [640/3764 (17%)]	Loss: 0.103688
+Train Epoch: 17 [960/3764 (25%)]	Loss: 0.248590
+Train Epoch: 17 [1280/3764 (34%)]	Loss: 0.312490
+Train Epoch: 17 [1600/3764 (42%)]	Loss: 0.132642
+Train Epoch: 17 [1920/3764 (51%)]	Loss: 0.138696
+Train Epoch: 17 [2240/3764 (59%)]	Loss: 0.198445
+Train Epoch: 17 [2560/3764 (68%)]	Loss: 0.429877
+Train Epoch: 17 [2880/3764 (76%)]	Loss: 0.228115
+Train Epoch: 17 [3200/3764 (85%)]	Loss: 0.193850
+Train Epoch: 17 [3520/3764 (93%)]	Loss: 0.083483
+SYNTHETIC RESULTS - Epoch 18
+-SYNTHETIC- Loss: 0.6436, Acc: 73.33%
+Training Loss: 0.2011, Training Acc: 91.60%
+real data Validation Loss: 0.3432, Validation Acc: 87.67%
+
+Epoch 19/35
+Train loader length: 118
+Train Epoch: 18 [0/3764 (0%)]	Loss: 0.100822
+Train Epoch: 18 [320/3764 (8%)]	Loss: 0.203704
+Train Epoch: 18 [640/3764 (17%)]	Loss: 0.189412
+Train Epoch: 18 [960/3764 (25%)]	Loss: 0.161269
+Train Epoch: 18 [1280/3764 (34%)]	Loss: 0.251494
+Train Epoch: 18 [1600/3764 (42%)]	Loss: 0.077546
+Train Epoch: 18 [1920/3764 (51%)]	Loss: 0.156844
+Train Epoch: 18 [2240/3764 (59%)]	Loss: 0.143150
+Train Epoch: 18 [2560/3764 (68%)]	Loss: 0.139422
+Train Epoch: 18 [2880/3764 (76%)]	Loss: 0.147399
+Train Epoch: 18 [3200/3764 (85%)]	Loss: 0.176941
+Train Epoch: 18 [3520/3764 (93%)]	Loss: 0.123323
+SYNTHETIC RESULTS - Epoch 19
+-SYNTHETIC- Loss: 0.6343, Acc: 71.67%
+Training Loss: 0.1875, Training Acc: 92.27%
+real data Validation Loss: 0.2860, Validation Acc: 89.00%
+Model saved to checkpoints/angle_classifier_20251130_171248.pth
+Validation Loss Improved: 0.2860
+
+
+Epoch 20/35
+Train loader length: 118
+Train Epoch: 19 [0/3764 (0%)]	Loss: 0.130410
+Train Epoch: 19 [320/3764 (8%)]	Loss: 0.196271
+Train Epoch: 19 [640/3764 (17%)]	Loss: 0.126461
+Train Epoch: 19 [960/3764 (25%)]	Loss: 0.316783
+Train Epoch: 19 [1280/3764 (34%)]	Loss: 0.208082
+Train Epoch: 19 [1600/3764 (42%)]	Loss: 0.116263
+Train Epoch: 19 [1920/3764 (51%)]	Loss: 0.077658
+Train Epoch: 19 [2240/3764 (59%)]	Loss: 0.108920
+Train Epoch: 19 [2560/3764 (68%)]	Loss: 0.070029
+Train Epoch: 19 [2880/3764 (76%)]	Loss: 0.280644
+Train Epoch: 19 [3200/3764 (85%)]	Loss: 0.081439
+Train Epoch: 19 [3520/3764 (93%)]	Loss: 0.171972
+SYNTHETIC RESULTS - Epoch 20
+-SYNTHETIC- Loss: 0.5231, Acc: 80.00%
+Training Loss: 0.2067, Training Acc: 91.82%
+real data Validation Loss: 0.3264, Validation Acc: 88.00%
+
+Epoch 21/35
+Train loader length: 118
+Train Epoch: 20 [0/3764 (0%)]	Loss: 0.075410
+Train Epoch: 20 [320/3764 (8%)]	Loss: 0.176168
+Train Epoch: 20 [640/3764 (17%)]	Loss: 0.159342
+Train Epoch: 20 [960/3764 (25%)]	Loss: 0.179988
+Train Epoch: 20 [1280/3764 (34%)]	Loss: 0.087942
+Train Epoch: 20 [1600/3764 (42%)]	Loss: 0.287552
+Train Epoch: 20 [1920/3764 (51%)]	Loss: 0.163853
+Train Epoch: 20 [2240/3764 (59%)]	Loss: 0.091735
+Train Epoch: 20 [2560/3764 (68%)]	Loss: 0.285619
+Train Epoch: 20 [2880/3764 (76%)]	Loss: 0.182836
+Train Epoch: 20 [3200/3764 (85%)]	Loss: 0.069017
+Train Epoch: 20 [3520/3764 (93%)]	Loss: 0.077815
+SYNTHETIC RESULTS - Epoch 21
+-SYNTHETIC- Loss: 0.5414, Acc: 73.33%
+Training Loss: 0.1882, Training Acc: 92.08%
+real data Validation Loss: 0.3321, Validation Acc: 86.33%
+
+Epoch 22/35
+Train loader length: 118
+Train Epoch: 21 [0/3764 (0%)]	Loss: 0.099616
+Train Epoch: 21 [320/3764 (8%)]	Loss: 0.089658
+Train Epoch: 21 [640/3764 (17%)]	Loss: 0.035587
+Train Epoch: 21 [960/3764 (25%)]	Loss: 0.185447
+Train Epoch: 21 [1280/3764 (34%)]	Loss: 0.374093
+Train Epoch: 21 [1600/3764 (42%)]	Loss: 0.121274
+Train Epoch: 21 [1920/3764 (51%)]	Loss: 0.061076
+Train Epoch: 21 [2240/3764 (59%)]	Loss: 0.249737
+Train Epoch: 21 [2560/3764 (68%)]	Loss: 0.194463
+Train Epoch: 21 [2880/3764 (76%)]	Loss: 0.220520
+Train Epoch: 21 [3200/3764 (85%)]	Loss: 0.181649
+Train Epoch: 21 [3520/3764 (93%)]	Loss: 0.140606
+SYNTHETIC RESULTS - Epoch 22
+-SYNTHETIC- Loss: 0.8695, Acc: 68.33%
+Training Loss: 0.1911, Training Acc: 92.22%
+real data Validation Loss: 0.3390, Validation Acc: 88.33%
+
+Epoch 23/35
+Train loader length: 118
+Train Epoch: 22 [0/3764 (0%)]	Loss: 0.019332
+Train Epoch: 22 [320/3764 (8%)]	Loss: 0.250588
+Train Epoch: 22 [640/3764 (17%)]	Loss: 0.098251
+Train Epoch: 22 [960/3764 (25%)]	Loss: 0.162004
+Train Epoch: 22 [1280/3764 (34%)]	Loss: 0.036477
+Train Epoch: 22 [1600/3764 (42%)]	Loss: 0.115914
+Train Epoch: 22 [1920/3764 (51%)]	Loss: 0.161109
+Train Epoch: 22 [2240/3764 (59%)]	Loss: 0.230591
+Train Epoch: 22 [2560/3764 (68%)]	Loss: 0.271059
+Train Epoch: 22 [2880/3764 (76%)]	Loss: 0.080985
+Train Epoch: 22 [3200/3764 (85%)]	Loss: 0.142244
+Train Epoch: 22 [3520/3764 (93%)]	Loss: 0.184335
+SYNTHETIC RESULTS - Epoch 23
+-SYNTHETIC- Loss: 0.6439, Acc: 80.00%
+Training Loss: 0.1827, Training Acc: 92.64%
+real data Validation Loss: 0.2730, Validation Acc: 89.67%
+Model saved to checkpoints/angle_classifier_20251130_171540.pth
+Validation Loss Improved: 0.2730
+
+
+Epoch 24/35
+Train loader length: 118
+Train Epoch: 23 [0/3764 (0%)]	Loss: 0.121393
+Train Epoch: 23 [320/3764 (8%)]	Loss: 0.262576
+Train Epoch: 23 [640/3764 (17%)]	Loss: 0.129754
+Train Epoch: 23 [960/3764 (25%)]	Loss: 0.147762
+Train Epoch: 23 [1280/3764 (34%)]	Loss: 0.157484
+Train Epoch: 23 [1600/3764 (42%)]	Loss: 0.202756
+Train Epoch: 23 [1920/3764 (51%)]	Loss: 0.162999
+Train Epoch: 23 [2240/3764 (59%)]	Loss: 0.260132
+Train Epoch: 23 [2560/3764 (68%)]	Loss: 0.088572
+Train Epoch: 23 [2880/3764 (76%)]	Loss: 0.255004
+Train Epoch: 23 [3200/3764 (85%)]	Loss: 0.068319
+Train Epoch: 23 [3520/3764 (93%)]	Loss: 0.153961
+SYNTHETIC RESULTS - Epoch 24
+-SYNTHETIC- Loss: 0.7159, Acc: 76.67%
+Training Loss: 0.1705, Training Acc: 93.04%
+real data Validation Loss: 0.2810, Validation Acc: 90.00%
+
+Epoch 25/35
+Train loader length: 118
+Train Epoch: 24 [0/3764 (0%)]	Loss: 0.154604
+Train Epoch: 24 [320/3764 (8%)]	Loss: 0.241813
+Train Epoch: 24 [640/3764 (17%)]	Loss: 0.147248
+Train Epoch: 24 [960/3764 (25%)]	Loss: 0.151678
+Train Epoch: 24 [1280/3764 (34%)]	Loss: 0.228914
+Train Epoch: 24 [1600/3764 (42%)]	Loss: 0.186517
+Train Epoch: 24 [1920/3764 (51%)]	Loss: 0.220702
+Train Epoch: 24 [2240/3764 (59%)]	Loss: 0.147336
+Train Epoch: 24 [2560/3764 (68%)]	Loss: 0.120476
+Train Epoch: 24 [2880/3764 (76%)]	Loss: 0.208360
+Train Epoch: 24 [3200/3764 (85%)]	Loss: 0.093125
+Train Epoch: 24 [3520/3764 (93%)]	Loss: 0.123243
+SYNTHETIC RESULTS - Epoch 25
+-SYNTHETIC- Loss: 0.6255, Acc: 71.67%
+Training Loss: 0.1613, Training Acc: 93.73%
+real data Validation Loss: 0.3326, Validation Acc: 87.67%
+
+Epoch 26/35
+Train loader length: 118
+Train Epoch: 25 [0/3764 (0%)]	Loss: 0.143280
+Train Epoch: 25 [320/3764 (8%)]	Loss: 0.146552
+Train Epoch: 25 [640/3764 (17%)]	Loss: 0.034521
+Train Epoch: 25 [960/3764 (25%)]	Loss: 0.168855
+Train Epoch: 25 [1280/3764 (34%)]	Loss: 0.261771
+Train Epoch: 25 [1600/3764 (42%)]	Loss: 0.086987
+Train Epoch: 25 [1920/3764 (51%)]	Loss: 0.073507
+Train Epoch: 25 [2240/3764 (59%)]	Loss: 0.239202
+Train Epoch: 25 [2560/3764 (68%)]	Loss: 0.223273
+Train Epoch: 25 [2880/3764 (76%)]	Loss: 0.146287
+Train Epoch: 25 [3200/3764 (85%)]	Loss: 0.215952
+Train Epoch: 25 [3520/3764 (93%)]	Loss: 0.054777
+SYNTHETIC RESULTS - Epoch 26
+-SYNTHETIC- Loss: 0.6683, Acc: 71.67%
+Training Loss: 0.1695, Training Acc: 92.75%
+real data Validation Loss: 0.2756, Validation Acc: 88.00%
+
+Epoch 27/35
+Train loader length: 118
+Train Epoch: 26 [0/3764 (0%)]	Loss: 0.182548
+Train Epoch: 26 [320/3764 (8%)]	Loss: 0.154934
+Train Epoch: 26 [640/3764 (17%)]	Loss: 0.368964
+Train Epoch: 26 [960/3764 (25%)]	Loss: 0.311600
+Train Epoch: 26 [1280/3764 (34%)]	Loss: 0.230238
+Train Epoch: 26 [1600/3764 (42%)]	Loss: 0.209846
+Train Epoch: 26 [1920/3764 (51%)]	Loss: 0.099800
+Train Epoch: 26 [2240/3764 (59%)]	Loss: 0.118434
+Train Epoch: 26 [2560/3764 (68%)]	Loss: 0.132073
+Train Epoch: 26 [2880/3764 (76%)]	Loss: 0.082820
+Train Epoch: 26 [3200/3764 (85%)]	Loss: 0.053097
+Train Epoch: 26 [3520/3764 (93%)]	Loss: 0.218770
+SYNTHETIC RESULTS - Epoch 27
+-SYNTHETIC- Loss: 0.6815, Acc: 73.33%
+Training Loss: 0.1602, Training Acc: 93.86%
+real data Validation Loss: 0.2958, Validation Acc: 89.00%
+
+Epoch 28/35
+Train loader length: 118
+Train Epoch: 27 [0/3764 (0%)]	Loss: 0.088408
+Train Epoch: 27 [320/3764 (8%)]	Loss: 0.122764
+Train Epoch: 27 [640/3764 (17%)]	Loss: 0.228942
+Train Epoch: 27 [960/3764 (25%)]	Loss: 0.110488
+Train Epoch: 27 [1280/3764 (34%)]	Loss: 0.326374
+Train Epoch: 27 [1600/3764 (42%)]	Loss: 0.197007
+Train Epoch: 27 [1920/3764 (51%)]	Loss: 0.034422
+Train Epoch: 27 [2240/3764 (59%)]	Loss: 0.275136
+Train Epoch: 27 [2560/3764 (68%)]	Loss: 0.225235
+Train Epoch: 27 [2880/3764 (76%)]	Loss: 0.149496
+Train Epoch: 27 [3200/3764 (85%)]	Loss: 0.209272
+Train Epoch: 27 [3520/3764 (93%)]	Loss: 0.111471
+SYNTHETIC RESULTS - Epoch 28
+-SYNTHETIC- Loss: 0.7629, Acc: 70.00%
+Training Loss: 0.1535, Training Acc: 94.00%
+real data Validation Loss: 0.2611, Validation Acc: 89.67%
+Model saved to checkpoints/angle_classifier_20251130_171914.pth
+Validation Loss Improved: 0.2611
+
+
+Epoch 29/35
+Train loader length: 118
+Train Epoch: 28 [0/3764 (0%)]	Loss: 0.097632
+Train Epoch: 28 [320/3764 (8%)]	Loss: 0.065704
+Train Epoch: 28 [640/3764 (17%)]	Loss: 0.071665
+Train Epoch: 28 [960/3764 (25%)]	Loss: 0.043488
+Train Epoch: 28 [1280/3764 (34%)]	Loss: 0.115203
+Train Epoch: 28 [1600/3764 (42%)]	Loss: 0.047577
+Train Epoch: 28 [1920/3764 (51%)]	Loss: 0.352303
+Train Epoch: 28 [2240/3764 (59%)]	Loss: 0.226985
+Train Epoch: 28 [2560/3764 (68%)]	Loss: 0.121832
+Train Epoch: 28 [2880/3764 (76%)]	Loss: 0.061527
+Train Epoch: 28 [3200/3764 (85%)]	Loss: 0.116813
+Train Epoch: 28 [3520/3764 (93%)]	Loss: 0.147202
+SYNTHETIC RESULTS - Epoch 29
+-SYNTHETIC- Loss: 0.6767, Acc: 75.00%
+Training Loss: 0.1481, Training Acc: 94.58%
+real data Validation Loss: 0.2606, Validation Acc: 89.67%
+Model saved to checkpoints/angle_classifier_20251130_171957.pth
+Validation Loss Improved: 0.2606
+
+
+Epoch 30/35
+Train loader length: 118
+Train Epoch: 29 [0/3764 (0%)]	Loss: 0.184627
+Train Epoch: 29 [320/3764 (8%)]	Loss: 0.070729
+Train Epoch: 29 [640/3764 (17%)]	Loss: 0.235309
+Train Epoch: 29 [960/3764 (25%)]	Loss: 0.107380
+Train Epoch: 29 [1280/3764 (34%)]	Loss: 0.160773
+Train Epoch: 29 [1600/3764 (42%)]	Loss: 0.143347
+Train Epoch: 29 [1920/3764 (51%)]	Loss: 0.239914
+Train Epoch: 29 [2240/3764 (59%)]	Loss: 0.046550
+Train Epoch: 29 [2560/3764 (68%)]	Loss: 0.038569
+Train Epoch: 29 [2880/3764 (76%)]	Loss: 0.177787
+Train Epoch: 29 [3200/3764 (85%)]	Loss: 0.088845
+Train Epoch: 29 [3520/3764 (93%)]	Loss: 0.070147
+SYNTHETIC RESULTS - Epoch 30
+-SYNTHETIC- Loss: 0.8013, Acc: 70.00%
+Training Loss: 0.1437, Training Acc: 94.39%
+real data Validation Loss: 0.2702, Validation Acc: 89.33%
+
+Epoch 31/35
+Train loader length: 118
+Train Epoch: 30 [0/3764 (0%)]	Loss: 0.109076
+Train Epoch: 30 [320/3764 (8%)]	Loss: 0.121470
+Train Epoch: 30 [640/3764 (17%)]	Loss: 0.102175
+Train Epoch: 30 [960/3764 (25%)]	Loss: 0.176017
+Train Epoch: 30 [1280/3764 (34%)]	Loss: 0.131197
+Train Epoch: 30 [1600/3764 (42%)]	Loss: 0.157897
+Train Epoch: 30 [1920/3764 (51%)]	Loss: 0.157326
+Train Epoch: 30 [2240/3764 (59%)]	Loss: 0.132427
+Train Epoch: 30 [2560/3764 (68%)]	Loss: 0.103369
+Train Epoch: 30 [2880/3764 (76%)]	Loss: 0.336383
+Train Epoch: 30 [3200/3764 (85%)]	Loss: 0.161251
+Train Epoch: 30 [3520/3764 (93%)]	Loss: 0.187875
+SYNTHETIC RESULTS - Epoch 31
+-SYNTHETIC- Loss: 0.5855, Acc: 76.67%
+Training Loss: 0.1481, Training Acc: 93.84%
+real data Validation Loss: 0.2402, Validation Acc: 90.33%
+Model saved to checkpoints/angle_classifier_20251130_172121.pth
+Validation Loss Improved: 0.2402
+
+
+Epoch 32/35
+Train loader length: 118
+Train Epoch: 31 [0/3764 (0%)]	Loss: 0.145638
+Train Epoch: 31 [320/3764 (8%)]	Loss: 0.119245
+Train Epoch: 31 [640/3764 (17%)]	Loss: 0.191403
+Train Epoch: 31 [960/3764 (25%)]	Loss: 0.159587
+Train Epoch: 31 [1280/3764 (34%)]	Loss: 0.088934
+Train Epoch: 31 [1600/3764 (42%)]	Loss: 0.219650
+Train Epoch: 31 [1920/3764 (51%)]	Loss: 0.185928
+Train Epoch: 31 [2240/3764 (59%)]	Loss: 0.029402
+Train Epoch: 31 [2560/3764 (68%)]	Loss: 0.103982
+Train Epoch: 31 [2880/3764 (76%)]	Loss: 0.063400
+Train Epoch: 31 [3200/3764 (85%)]	Loss: 0.329427
+Train Epoch: 31 [3520/3764 (93%)]	Loss: 0.182658
+SYNTHETIC RESULTS - Epoch 32
+-SYNTHETIC- Loss: 0.5825, Acc: 78.33%
+Training Loss: 0.1323, Training Acc: 94.77%
+real data Validation Loss: 0.3186, Validation Acc: 89.67%
+
+Epoch 33/35
+Train loader length: 118
+Train Epoch: 32 [0/3764 (0%)]	Loss: 0.075743
+Train Epoch: 32 [320/3764 (8%)]	Loss: 0.142765
+Train Epoch: 32 [640/3764 (17%)]	Loss: 0.070973
+Train Epoch: 32 [960/3764 (25%)]	Loss: 0.078151
+Train Epoch: 32 [1280/3764 (34%)]	Loss: 0.148818
+Train Epoch: 32 [1600/3764 (42%)]	Loss: 0.116734
+Train Epoch: 32 [1920/3764 (51%)]	Loss: 0.074212
+Train Epoch: 32 [2240/3764 (59%)]	Loss: 0.033721
+Train Epoch: 32 [2560/3764 (68%)]	Loss: 0.153204
+Train Epoch: 32 [2880/3764 (76%)]	Loss: 0.118942
+Train Epoch: 32 [3200/3764 (85%)]	Loss: 0.043344
+Train Epoch: 32 [3520/3764 (93%)]	Loss: 0.135379
+SYNTHETIC RESULTS - Epoch 33
+-SYNTHETIC- Loss: 0.7403, Acc: 71.67%
+Training Loss: 0.1320, Training Acc: 94.58%
+real data Validation Loss: 0.2556, Validation Acc: 90.00%
+
+Epoch 34/35
+Train loader length: 118
+Train Epoch: 33 [0/3764 (0%)]	Loss: 0.097193
+Train Epoch: 33 [320/3764 (8%)]	Loss: 0.064096
+Train Epoch: 33 [640/3764 (17%)]	Loss: 0.213737
+Train Epoch: 33 [960/3764 (25%)]	Loss: 0.034503
+Train Epoch: 33 [1280/3764 (34%)]	Loss: 0.051130
+Train Epoch: 33 [1600/3764 (42%)]	Loss: 0.086403
+Train Epoch: 33 [1920/3764 (51%)]	Loss: 0.201551
+Train Epoch: 33 [2240/3764 (59%)]	Loss: 0.180940
+Train Epoch: 33 [2560/3764 (68%)]	Loss: 0.129719
+Train Epoch: 33 [2880/3764 (76%)]	Loss: 0.068965
+Train Epoch: 33 [3200/3764 (85%)]	Loss: 0.224715
+Train Epoch: 33 [3520/3764 (93%)]	Loss: 0.257508
+SYNTHETIC RESULTS - Epoch 34
+-SYNTHETIC- Loss: 0.6577, Acc: 78.33%
+Training Loss: 0.1416, Training Acc: 94.50%
+real data Validation Loss: 0.2946, Validation Acc: 89.67%
+
+Epoch 35/35
+Train loader length: 118
+Train Epoch: 34 [0/3764 (0%)]	Loss: 0.093188
+Train Epoch: 34 [320/3764 (8%)]	Loss: 0.096019
+Train Epoch: 34 [640/3764 (17%)]	Loss: 0.239225
+Train Epoch: 34 [960/3764 (25%)]	Loss: 0.036771
+Train Epoch: 34 [1280/3764 (34%)]	Loss: 0.270050
+Train Epoch: 34 [1600/3764 (42%)]	Loss: 0.183824
+Train Epoch: 34 [1920/3764 (51%)]	Loss: 0.155926
+Train Epoch: 34 [2240/3764 (59%)]	Loss: 0.051054
+Train Epoch: 34 [2560/3764 (68%)]	Loss: 0.201330
+Train Epoch: 34 [2880/3764 (76%)]	Loss: 0.166120
+Train Epoch: 34 [3200/3764 (85%)]	Loss: 0.043242
+Train Epoch: 34 [3520/3764 (93%)]	Loss: 0.080571
+SYNTHETIC RESULTS - Epoch 35
+-SYNTHETIC- Loss: 0.6212, Acc: 83.33%
+Training Loss: 0.1282, Training Acc: 94.98%
+real data Validation Loss: 0.2652, Validation Acc: 90.33%
+Training history saved to logs/training_history_20251130_165910.csv
